@@ -20,3 +20,5 @@ This is the client side of the horse racing project.
 ![Screen Shot 2021-06-15 at 11 55 23 PM](https://user-images.githubusercontent.com/63022198/122172058-4029c580-ce35-11eb-836e-81cd27877d86.png)
 
 ![Screen Shot 2021-06-16 at 8 05 34 PM](https://user-images.githubusercontent.com/63022198/122324779-3c05b280-cede-11eb-842e-ccf34731d540.png)
+
+![Screen Shot 2021-06-16 at 9 08 19 PM](https://user-images.githubusercontent.com/63022198/122329877-03b6a200-cee7-11eb-93fc-2a6c45a95ad0.png)
