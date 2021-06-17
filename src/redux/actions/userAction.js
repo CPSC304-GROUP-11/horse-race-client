@@ -25,7 +25,7 @@ export const loginUser = (userData, history) => (dispatch) => {
         .then((res) => {
             console.log("Authenticated");
             if (isEmployee) {
-                history.push('/EmployeeManager');
+                history.push('/EmployeeRegular');
                 dispatch({
                     type: AUTHENTICATE,
                     payload: username
