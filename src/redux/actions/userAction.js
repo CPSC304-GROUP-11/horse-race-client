@@ -10,6 +10,7 @@ import {
     CUSTOMER_INFO_FAIL
 } from '../types';
 import axios from 'axios';
+import store from '../store';
 
 // Logs user in
 export const loginUser = (userData, history) => (dispatch) => {
@@ -17,12 +18,21 @@ export const loginUser = (userData, history) => (dispatch) => {
 
     const username = userData.username;
     const password = userData.password;
+    const isEmployee = store.getState().user.isEmployee;
 
     axios
         .get(`/users/login.php?username='${username}'&password='${password}'`)
         .then((res) => {
             console.log("Authenticated");
-            dispatch(fetchInitialCustomerInfo(username, history));
+            if (isEmployee) {
+                history.push('/EmployeeManager');
+                dispatch({
+                    type: AUTHENTICATE,
+                    payload: username
+                });
+            } else {
+                dispatch(fetchInitialCustomerInfo(username, history));
+            }
         })
         .catch((err) => {
             dispatch({type: LOGIN_ERROR});

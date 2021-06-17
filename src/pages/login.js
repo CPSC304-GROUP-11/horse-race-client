@@ -22,6 +22,7 @@ export class login extends Component {
     constructor() {
         super();
         this.state = {
+            isEmployee: false,
             username: "",
             password: ""
         }
@@ -37,6 +38,7 @@ export class login extends Component {
     }
 
     handleSetEmployee = (event, newStatus) => {
+        this.setState({isEmployee: newStatus})
         this.props.setEmployee(newStatus);
     }
 
@@ -47,8 +49,8 @@ export class login extends Component {
     }
 
     render() {
-        const {user: {loading, isEmployee, loginError}} = this.props;
-        const {username, password} = this.state;
+        const {user: {loading, loginError}} = this.props;
+        const {isEmployee, username, password} = this.state;
 
         return (
             <div>
