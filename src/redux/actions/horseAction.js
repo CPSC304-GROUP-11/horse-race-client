@@ -3,7 +3,8 @@ import {
     ALL_HORSE_INFO_FAIL,
     HORSE_INFO,
     HORSE_INFO_FAIL,
-    SET_CUR_HORSE_ID
+    SUPER_HORSE,
+    SUPER_HORSE_FAIL
 } from '../types';
 import axios from 'axios';
 
@@ -33,7 +34,7 @@ export const fetchSingleHorse = (horseID) => (dispatch) => {
     axios
         .get(`/horse/horseInfo.php?horseid=${horseID}`)
         .then((res) => {
-            console.log(res.data);
+            // console.log(res.data);
             dispatch({
                 type: HORSE_INFO,
                 payload: res.data
@@ -46,25 +47,20 @@ export const fetchSingleHorse = (horseID) => (dispatch) => {
         })
 }
 
-export const setCurHorseID = (horseID) => (dispatch) => {
-    dispatch({
-        type: SET_CUR_HORSE_ID,
-        payload: horseID
-    })
+// get a horse particiapted in all races 
+export const fetchSuperHorse = () => (dispatch) => {
+    axios
+        .get(`/horse/superHorse.php`)
+        .then((res) => {
+            // console.log(res.data);
+            dispatch({
+                type: SUPER_HORSE,
+                payload: res.data
+            });
+        })
+        .catch((err) => {
+            dispatch({
+                type: SUPER_HORSE_FAIL
+            })
+        })
 }
-
-// // add horse
-// export const addHorse = (hdata) => (dispatch) => {
-//     // console.log('adding');
-//     // console.log(hdata);
-//     axios
-//       .post(`/horse/addhorse.php`, hdata)
-//       .then((res)=>{
-//           console.log("printing out response")
-//           console.log(res.data);
-//           dispatch({
-//               type: ADD_HORSE,
-//               payload: hdata
-//           })
-//       })
-//   }

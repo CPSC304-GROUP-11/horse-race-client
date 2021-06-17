@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import NavBarLP from '../components/NavBarLP';
 
 // Components
 import AddEmployee from '../components/add/AddEmployee';
 import ManageEmployees from '../components/manage/ManageEmployees';
+import Button from '@material-ui/core/Button';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 import Container from '@material-ui/core/Container'
 
@@ -21,10 +24,19 @@ export class EmployeeManager extends Component {
     render() {
         return (
             <div>
-                <NavBarLP/>
-                <Container maxWidth="lg" style={{marginTop: '100px'}}>
-                <ManageEmployees/>
-                <AddEmployee/>
+                <NavBarLP />
+                <Container maxWidth="lg" style={{ marginTop: '100px' }}>
+                    <Button
+                        variant="outlined"
+                        component={Link}
+                        to="/EmployeeRegular"
+                        style={{ marginRight: '50px' }}
+                    >
+                        <ArrowBackIcon />
+                        Back
+                    </Button>
+                    <ManageEmployees />
+                    <AddEmployee />
                 </Container>
             </div>
         )

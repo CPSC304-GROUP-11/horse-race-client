@@ -55,3 +55,11 @@ export const ADD_JOCKEY = 'ADD_JOCKEY';
 export const ADD_SUPPLIER = 'ADD_SUPPLIER';
 export const ADD_STADIUM = 'ADD_STADIUM';
 export const ADD_RACE = 'ADD_RACE';
+
+export const SUPER_HORSE = 'SUPER_HORSE';
+export const SUPER_HORSE_FAIL = 'SUPER_HORSE_FAIL';
+
+export const ALL_JOCKEY_INFO = 'ALL_JOCKEY_INFO';
+export const ALL_JOCKEY_INFO_FAIL = 'ALL_JOCKEY_INFO_FAIL';
+export const JOCKEY_INFO = 'JOCKEY_INFO';
+export const JOCKEY_INFO_FAIL = 'JOCKEY_INFO_FAIL';

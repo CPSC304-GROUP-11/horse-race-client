@@ -7,6 +7,7 @@ import custBet from './reducers/custBetReducer';
 import raceInfo from './reducers/raceInfoReducer';
 import employee from './reducers/employeeReducer';
 import horsesInfo from './reducers/horseReducer';
+import jockeyInfo from './reducers/jockeyReducer';
 
 const initialState = {};
 
@@ -16,6 +17,7 @@ const reducers = combineReducers({
     user: user,
     customer: customer,
     custBet: custBet,
+    jockeyInfo: jockeyInfo,
     raceInfo: raceInfo,
     employee: employee,
     horsesInfo: horsesInfo
