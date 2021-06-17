@@ -48,11 +48,13 @@ export const fetchInitialCustomerInfo = (username, history) => (dispatch) => {
                 type: CUSTOMER_INFO,
                 payload: res.data
             });
-            history.push('/customer');
             dispatch({
                 type: AUTHENTICATE,
                 payload: username
             });
+        })
+        .then(() => {
+            history.push('/customer');
         })
         .catch((err) => {
             dispatch({
